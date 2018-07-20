@@ -13,7 +13,12 @@
         <h2 class="blog-post-title"><a href="{{ route('single-post', ['id' => $post->id]) }}"> {{ $post->title }} </a> </h2>
         <p class="blog-post-meta">{{ $post->created_at }}</p>
         by: <a href="{{ '/users/' . $post->user->id }}" class="blog-post-meta">{{ $post->user->name }}</a>
-
+        <p class="blog-post-meta">
+            @foreach($post->tags as $tag)
+                <a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a>
+                @endforeach
+            </p>
+        
         <p>
         {{ $post->body }}
         </p>
