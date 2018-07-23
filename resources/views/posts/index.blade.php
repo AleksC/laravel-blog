@@ -24,4 +24,17 @@
         
     </div>
     @endforeach
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item {{ $posts->currentPage() == 1 ? 'disabled' : ' ' }}">
+          <a class="page-link" 
+          href="{{ $posts->previousPageUrl() }}">Previous</a>
+          </li>
+          <li class="page-item {{ $posts->hasMorePages() ? ' ' : 'disabled' }}">
+              <a class="page-link" 
+                href="{{ $posts->nextPageUrl() }}">Next</a>
+          </li>
+        </ul>
+      </nav>
 @endsection

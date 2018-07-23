@@ -14,13 +14,14 @@
     {{ $post->body }}
     </p>
     @include('posts.add-comment')
-    <ul>
-        @foreach($post->comments as $comment) 
-            <li> 
-                <p>{{ $comment->author }} says:</p> 
-                <p>{{ $comment->text }}</p> 
-            </li>
-        @endforeach
-    </ul>
+        @foreach($post->comments as $comment)
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-title">{{ $comment->author }} says: </h6>
+                <p class="card-text">{{ $comment->text }}</p>
+            </div>
+        </div>
+        <br>
+        @endforeach  
 </div>
 @endsection
