@@ -18,7 +18,6 @@
                 <a href="/posts/tags/{{ $tag->name }}">{{ $tag->name }}</a>
                 @endforeach
             </p>
-        
         <p>
         {{ $post->body }}
         </p>
